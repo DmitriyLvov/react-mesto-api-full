@@ -1,0 +1,27 @@
+@keyframes avatar_hovered {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../../../images/edit.svg);
+  }
+}
+
+.avatar__layout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.avatar__layout:hover {
+  cursor: pointer;
+  animation: avatar_hovered 0.2s linear forwards;
+  background-repeat: no-repeat;
+  background-size: 26px;
+  background-position: 50% 50%;
+}

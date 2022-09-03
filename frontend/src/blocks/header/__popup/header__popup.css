@@ -1,0 +1,7 @@
+.header__popup{
+  padding: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}

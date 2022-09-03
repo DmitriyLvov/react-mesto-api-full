@@ -1,0 +1,16 @@
+@keyframes button_hovered_inv {
+  from {
+    color: #A9A9A9;
+  }
+  to {
+    color: white;
+  }
+}
+
+.header__button_type_gray{
+color: #A9A9A9;
+}
+
+.header__button_type_gray:hover{
+  animation: button_hovered_inv 0.2s linear forwards;
+}

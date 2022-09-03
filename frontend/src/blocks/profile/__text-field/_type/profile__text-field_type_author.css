@@ -1,0 +1,11 @@
+.profile__text-field_type_author {
+  font: 500 42px/48px 'Inter';
+  display: inline;
+}
+
+@media screen and (max-width:622px) {
+  .profile__text-field_type_author {
+    font: 500 27px/1.21 'Inter';
+    padding-left: 32px;
+  }
+}

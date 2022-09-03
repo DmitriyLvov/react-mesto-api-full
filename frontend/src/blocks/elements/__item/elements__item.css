@@ -1,0 +1,9 @@
+.elements__item {
+  width: 282px;
+  min-height: 361px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  line-height: 0;
+  position: relative;
+}

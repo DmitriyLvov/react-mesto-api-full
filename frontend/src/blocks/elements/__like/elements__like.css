@@ -1,0 +1,25 @@
+@keyframes hovered {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.elements__like {
+  background-image: url(../../../images/like.svg);
+  background-repeat: no-repeat;
+  background-size: 21px;
+  background-position: center;
+  align-self: center;
+  width: 22px;
+  height: 19px;
+  border: none;
+  background-color: #fff;
+}
+
+.elements__like:hover {
+  cursor: pointer;
+  animation: hovered 0.2s linear forwards;
+}

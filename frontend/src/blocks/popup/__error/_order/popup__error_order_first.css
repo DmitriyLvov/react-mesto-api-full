@@ -1,0 +1,11 @@
+.popup__error_order_first {
+  left: 0px;
+  top: 141px;
+}
+
+@media screen and (max-width:700px) {
+  .popup__error_order_first {
+    left: -11px;
+    top: 149px;
+  }
+}

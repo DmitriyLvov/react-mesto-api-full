@@ -1,0 +1,9 @@
+.elements__title {
+  margin-block: 0;
+  font: 900 24px/1.21 'Inter';
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 190px;
+  /* height: 24px; */
+}

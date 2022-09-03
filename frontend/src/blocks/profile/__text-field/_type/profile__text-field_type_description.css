@@ -1,0 +1,17 @@
+.profile__text-field_type_description {
+  font: 500 18px/1.15 'Inter';
+  margin-top: 8px;
+}
+
+@media screen and (max-width:940px) {
+  .profile__text-field_type_description {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:622px) {
+  .profile__text-field_type_description {
+    margin: 7px auto 0 auto;
+    font: 400 14px/17px 'Inter';
+  }
+}

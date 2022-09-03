@@ -1,0 +1,33 @@
+@keyframes hovered {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+.profile__add-button {
+  margin: auto 0 auto auto;
+  background-image: url(../../../images/add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
+  animation: hovered 0.2s linear forwards;
+}
+
+@media screen and (max-width:940px) {
+  .profile__add-button {
+    margin: 33px auto 0px auto;
+    width: 282px;
+    background-size: 16px;
+  }
+}

@@ -1,0 +1,32 @@
+@keyframes save-hovered {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.popup__submit-button {
+  width: 358px;
+  height: 50px;
+  margin: 48px auto 36px auto;
+  background-color: #000;
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  font: 400 18px/22px 'Inter';
+}
+
+.popup__submit-button:hover {
+  cursor: pointer;
+  animation: save-hovered 0.2s linear forwards;
+}
+
+@media screen and (max-width:700px) {
+  .popup__submit-button {
+    width: 238px;
+    height: 46px;
+    font: 400 14px/17px 'Inter';
+  }
+}

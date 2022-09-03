@@ -1,0 +1,15 @@
+.footer__copyright {
+  color: #545454;
+  margin-block: 0;
+  padding: 67px 0 60px 0;
+  font: 400 18px/1.15 'Inter';
+}
+
+@media screen and (max-width:522px) {
+  .footer__copyright {
+    padding: 48px 0 36px 0;
+    width: calc(100vw - 38px);
+    margin: 0 auto;
+    font: 400 14px/17px 'Inter';
+  }
+}

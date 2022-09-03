@@ -1,0 +1,9 @@
+.popup__description {
+  position: absolute;
+  margin-block: 0;
+  left: 0px;
+  top: calc(100% + 10px);
+  font: 400 12px/1.21 'Inter';
+  color: #fff;
+  max-width: 75vw;
+}

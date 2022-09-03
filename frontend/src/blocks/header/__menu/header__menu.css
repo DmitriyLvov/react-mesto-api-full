@@ -1,0 +1,19 @@
+.header__menu{
+  flex-direction: column;
+  background-color: black;
+  gap:6px;
+  box-sizing: border-box;
+  display: none;
+  align-items: center;
+}
+
+.header__menu:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width:540px) {
+  .header__menu {
+    display: flex;
+    margin-right: 30px;
+  }
+}

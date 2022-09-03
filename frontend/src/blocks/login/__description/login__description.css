@@ -1,0 +1,9 @@
+.login__description{
+  color: white;
+  font: 400 14px/1.21 Inter;
+  margin: 15px auto 0 auto;
+  padding: 0;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
