@@ -10,6 +10,8 @@ class Api {
     //Запрос данных с сервера
     return fetch(`${this._baseURL}/users/me`, {
       headers: this._headers,
+      credentials: 'include',
+      method: 'GET',
     }).then((res) => getResponseData(res));
   };
 
@@ -17,6 +19,8 @@ class Api {
     //Запрос карточек с сервера
     return fetch(`${this._baseURL}/cards`, {
       headers: this._headers,
+      method: 'GET',
+      credentials: 'include',
     }).then((res) => getResponseData(res));
   };
 
@@ -24,6 +28,7 @@ class Api {
     const { name, about } = data;
     return fetch(`${this._baseURL}/users/me`, {
       method: 'PATCH',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify({
         name,
@@ -36,6 +41,7 @@ class Api {
     const { name, link } = data;
     return fetch(`${this._baseURL}/cards`, {
       method: 'POST',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify({
         name,
@@ -47,6 +53,7 @@ class Api {
   removeCard = (cardId) => {
     return fetch(`${this._baseURL}/cards/${cardId}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers,
     }).then((res) => getResponseData(res));
   };
@@ -54,6 +61,7 @@ class Api {
   addLike = (cardId) => {
     return fetch(`${this._baseURL}/cards/${cardId}/likes`, {
       method: 'PUT',
+      credentials: 'include',
       headers: this._headers,
     }).then((res) => getResponseData(res));
   };
@@ -61,6 +69,7 @@ class Api {
   removeLike = (cardId) => {
     return fetch(`${this._baseURL}/cards/${cardId}/likes`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers,
     }).then((res) => getResponseData(res));
   };
@@ -68,6 +77,7 @@ class Api {
   setAvatar = (avatar) => {
     return fetch(`${this._baseURL}/users/me/avatar`, {
       method: 'PATCH',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify({
         avatar,
