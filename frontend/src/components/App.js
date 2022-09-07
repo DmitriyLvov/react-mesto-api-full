@@ -38,20 +38,21 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsLoading(true);
-    Promise.all([api.getCards(), api.getAuthorInfo()])
-      .then(([cards, userInfo]) => {
-        setCards(cards);
-        setCurrentUser({ ...userInfo });
-      })
-      .catch((err) => {
-        console.log(`Ошибка запроса стартовой информации: ${err}`);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
-  console.log(currentUser);
+    if (isAuth){
+      setIsLoading(true);
+      Promise.all([api.getCards(), api.getAuthorInfo()])
+        .then(([cards, userInfo]) => {
+          setCards(cards);
+          setCurrentUser({ ...userInfo });
+        })
+        .catch((err) => {
+          console.log(`Ошибка запроса стартовой информации: ${err}`);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [isAuth]);
   //Проверка пользователя
   useEffect(() => {
     const token = localStorage.getItem('jwt');
@@ -59,8 +60,8 @@ function App() {
       authApi
         .getUserInfo(token)
         .then((res) => {
-          //Изменяем Header на e-mail пользователя
-          setEmail(res.data.email);
+          // Загружаем данные пользователя
+          setEmail(res.email);
           //Устанавливаем флаг авторизации
           setIsAuth(true);
           //Перенаправляем на главную
@@ -167,7 +168,7 @@ function App() {
 
   const handleCardLike = (card) => {
     // Проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((id) => id === currentUser._id);
     isLiked
       ? api
           .removeLike(card._id)
@@ -236,7 +237,7 @@ function App() {
         //Сохраняем токен в локальном хранилище
         localStorage.setItem('jwt', res.token);
         //Изменяем Header на e-mail пользователя
-        setEmail(data.email);
+        setEmail(res.user.email);
         //Устанавливаем флаг авторизации
         setIsAuth(true);
         //Перенаправляем на главную

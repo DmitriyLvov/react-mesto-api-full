@@ -10,6 +10,7 @@ class authAPI {
     return fetch(`${this._baseURL}/signup`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
@@ -22,6 +23,7 @@ class authAPI {
     return fetch(`${this._baseURL}/signin`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
@@ -30,18 +32,15 @@ class authAPI {
   };
   //процедура проверки валидности токена и получения данных пользователя
   getUserInfo = (token) => {
-    const headers = {
-      ...this.headers,
-      Authorization: `Bearer ${token}`,
-    };
     return fetch(`${this._baseURL}/users/me`, {
       method: 'get',
-      headers,
+      headers: {...this._headers, 'authorization': `Bearer ${token}` },
+      credentials: 'include',
     }).then((res) => getResponseData(res));
   };
 }
 
-const authApi = new authAPI('https://auth.nomoreparties.co', {
+const authApi = new authAPI('https://api.dlvov.nomoredomains.sbs', {
   'Content-Type': 'application/json',
 });
 

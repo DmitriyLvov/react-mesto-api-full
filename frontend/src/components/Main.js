@@ -13,7 +13,6 @@ function Main({
   onCardDelete,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  console.log(cards);
   return (
     <>
       <main>

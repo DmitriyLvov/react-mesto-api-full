@@ -3,7 +3,7 @@
   "author": "Dmitriy Lvov",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/DmitriyLvov/express-mesto-gha.git",
+  "homepage": "https://api.dlvov.nomoredomains.sbs/",
   "dependencies": {
     "all": "^0.0.0",
     "bcryptjs": "^2.4.3",

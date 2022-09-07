@@ -102,12 +102,11 @@ module.exports.updateAvatar = (req, res, next) => {
 module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
-    .then(({ _id }) => {
-      // const { NODE_ENV, JWT_SECRET } = process.env;
-      // const token = jwt.sign({ _id }, NODE_ENV === 'production' ?
-      // JWT_SECRET : DEV_SECRET, { expiresIn: '7d' });
-      const token = jwt.sign({ _id }, DEV_SECRET, { expiresIn: '7d' });
-      res.send({ message: 'Success', token });
+    .then((user) => {
+      const { _id } = user;
+      const { NODE_ENV, JWT_SECRET } = process.env;
+      const token = jwt.sign({ _id }, NODE_ENV === 'production' ? JWT_SECRET : DEV_SECRET, { expiresIn: '7d' });
+      res.send({ message: 'Success', token, user });
     })
     .catch(next);
 };

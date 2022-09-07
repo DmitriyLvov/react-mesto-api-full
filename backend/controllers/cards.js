@@ -52,7 +52,7 @@ module.exports.likeCard = (req, res, next) => {
     cardId,
     { $addToSet: { likes: req.user._id } }, // добавить _id в массив, если его там нет
     { new: true },
-  )
+  ).populate('owner')
     .then((card) => {
       // Если объект по ID не найден
       if (!card) {
@@ -71,7 +71,7 @@ module.exports.dislikeCard = (req, res, next) => {
     cardId,
     { $pull: { likes: req.user._id } }, // добавить _id в массив, если его там нет
     { new: true },
-  )
+  ).populate('owner')
     .then((card) => {
       // Если объект по ID не найден
       if (!card) {
