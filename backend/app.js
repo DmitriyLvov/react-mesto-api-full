@@ -23,6 +23,7 @@ const options = {
     'http://localhost:3000',
     'https://dlvov.nomoredomains.sbs',
     'https://dmitriylvov.github.io/react-mesto-auth/',
+    'http://dlvov.nomoredomains.sbs',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
