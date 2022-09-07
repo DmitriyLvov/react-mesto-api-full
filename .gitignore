@@ -22,6 +22,7 @@
 /frontend/yarn-debug.log*
 /frontend/yarn-error.log*
 /frontend/.env
+/frontend/node_modules
 
 # Backend
 
