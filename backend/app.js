@@ -18,21 +18,22 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
-const options = {
-  origin: [
-    'http://localhost:3000',
-    'https://dlvov.nomoredomains.sbs',
-    'https://dmitriylvov.github.io/react-mesto-auth/',
-    'http://dlvov.nomoredomains.sbs',
-  ],
-  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
-  credentials: true,
-};
+// const options = {
+//   origin: [
+//     'http://localhost:3000',
+//     'https://dlvov.nomoredomains.sbs',
+//     'https://dmitriylvov.github.io/react-mesto-auth/',
+//     'http://dlvov.nomoredomains.sbs',
+//   ],
+//   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+//   credentials: true,
+// };
 
-app.use('*', cors(options));
+// app.use('*', cors(options));
+app.use('*', cors());
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
